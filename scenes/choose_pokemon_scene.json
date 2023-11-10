@@ -1,0 +1,19 @@
+{
+  "text": "Choose your first pokemon",
+  "type": "none",
+  "in_game_scene": false,
+  "actions": [
+    {
+      "text": "Charmander, the fire pokemon!!!",
+      "type": "get_pokemon",
+      "parameter": "charmander",
+      "next_scene": "start_village"
+    },
+    {
+      "text": "Bulbasaurus, the water pokemon!!!",
+      "type": "get_pokemon",
+      "parameter": "bulbasaurus",
+      "next_scene": "start_village"
+    }
+  ]
+}

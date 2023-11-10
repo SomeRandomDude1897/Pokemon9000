@@ -1,0 +1,23 @@
+{
+  "name": "punch",
+  "attack_descriptions": [
+    " fiercly punches ",
+    " delivers a punch to ",
+    " punches "
+  ],
+  "type": "earth",
+  "min_damage": [
+    3,
+    5,
+    7,
+    8,
+    10
+  ],
+  "max_damage": [
+    5,
+    8,
+    10,
+    12,
+    14
+  ]
+}

@@ -1,0 +1,38 @@
+{
+	"name": "Bulbasaurus",
+	"type": "water",
+	"hp_levels": [
+		25,
+		40,
+		60,
+		70,
+		90
+	],
+	"sp_levels": [
+		10,
+		20,
+		30,
+		40,
+		50
+	],
+	"abilities": [
+		{
+			"name": "water_spray",
+			"level": 1
+		},
+		{
+			"name": "water_strike",
+			"level": 2
+		}
+	],
+	"encounter_level_min": 1,
+	"encounter_level_max": 4,
+	"evolve_number": 1,
+	"evolution_chance": 35,
+	"evolution_level": 7,
+	"resistances": [
+	],
+	"weaknesses": [
+	],
+	"experience":  75
+}

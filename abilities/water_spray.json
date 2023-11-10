@@ -1,0 +1,23 @@
+{
+  "name": "water spray",
+  "attack_descriptions": [
+    " spits a water flow at ",
+    " shows the power of the water to ",
+    " spits at "
+  ],
+  "type": "water",
+  "min_damage": [
+    1,
+    4,
+    8,
+    12,
+    16
+  ],
+  "max_damage": [
+    7,
+    13,
+    18,
+    20,
+    23
+  ]
+}

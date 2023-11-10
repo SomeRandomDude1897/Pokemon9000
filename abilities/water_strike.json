@@ -1,0 +1,23 @@
+{
+  "name": "water strike",
+  "attack_descriptions": [
+    " calls an water air strike at ",
+    " waterbombards ",
+    " gives water hell to "
+  ],
+  "type": "water",
+  "min_damage": [
+    15,
+    20,
+    25,
+    30,
+    35
+  ],
+  "max_damage": [
+    30,
+    45,
+    50,
+    60,
+    80
+  ]
+}

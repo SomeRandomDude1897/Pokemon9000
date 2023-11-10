@@ -1,0 +1,19 @@
+{
+  "text": "Start Village",
+  "in_game_scene": true,
+  "type": "none",
+  "actions": [
+    {
+      "text": "Randomly Pick up a fight with a pokemon",
+      "type": "battle",
+      "parameter": "charmander",
+      "next_scene": "start_village"
+    },
+    {
+      "text": "Go to pokemon centre to heal your pokemons",
+      "type": "heal",
+      "parameter": "",
+      "next_scene": "start_scene_heal"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "text": "Start Village",
+  "in_game_scene": false,
+  "type": "none",
+  "actions": [
+    {
+      "text": "thank doctors and go back",
+      "type": "heal",
+      "parameter": "",
+      "next_scene": "start_village"
+    }
+  ]
+}

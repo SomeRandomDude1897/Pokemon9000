@@ -1,0 +1,23 @@
+{
+  "name": "fire punch",
+  "attack_descriptions": [
+    " fires his knuckles to hit ",
+    " delivers a fire punch to ",
+    " fire punches "
+  ],
+  "type": "fire",
+  "min_damage": [
+    7,
+    10,
+    15,
+    20,
+    27
+  ],
+  "max_damage": [
+    16,
+    18,
+    21,
+    29,
+    44
+  ]
+}

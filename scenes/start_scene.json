@@ -1,0 +1,19 @@
+{
+  "text": "POKEMON 9000",
+  "type": "none",
+  "in_game_scene": false,
+  "actions": [
+    {
+      "text": "Start",
+      "type": "go_to_scene",
+      "parameter": "",
+      "next_scene": "choose_pokemon_scene"
+    },
+    {
+      "text": "Exit",
+      "type": "close_game",
+      "parameter": "",
+      "next_scene": ""
+    }
+  ]
+}
