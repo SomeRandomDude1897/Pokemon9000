@@ -21,13 +21,15 @@ struct pokemon_params
 const int level_cap[5] = { 50, 100, 250, 700, 1500 };
 const int max_pokemon_level = 5;
 
-#pragma once
+#pragma once // в начало файлика
 class Pokemon
 {
 public:
 	void Load(std::string filename, bool is_feral);
 	void Heal();
 	pokemon_params ExportParams();
+	/* Методы, которые не меняют состояние покемона,
+	 * должны быть константными */
 	std::vector<std::string> GetResistances();
 	std::vector<std::string> GetWeaknesses();
 	int GetHp();
@@ -39,6 +41,13 @@ public:
 	int GetExperience();
 	int GetDroppedExperience();
 	std::string GetType();
+	/* Иметь сеттеры несколько противоречит инкапсуляции, 
+	 * потому что это все равно, что оставлять поле публичным.
+	 * Насколько я знаю, получить дмг можно только от способности
+	 * атакующего покемона, тогда это и должно быть местом понижения
+	 * здоровья. Тут может помочь ключевое слово friend, пусть оно
+	 * тоже в какой-то степени нарушает инкапсуляцию, но точно не так 
+	 * сильно */
 	void SetHp(int hp);
 	void SetSp(int sp);
 	void SetExperience(int exp);

@@ -34,7 +34,10 @@ std::vector<std::string> load_desriptions(json data)
 	}
 	return descriptions;
 }
-
+/* Я так понимаю, тут столько значений, потому что столько уровней.
+ * Это не то чтобы очевидно. Потом, почему нельзя было сделать какую-то
+ * формулу, которая бы в зависимости от уровня покемона просто получала
+ * нужное значение? */
 std::vector<int> load_min_damage(json data)
 {
 	std::vector <int> min_damage;

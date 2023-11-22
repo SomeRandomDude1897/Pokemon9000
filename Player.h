@@ -22,6 +22,7 @@ public:
 
 	
 private:
+	/* Почему текущий покемон такого типа?? */
 	PokemonBattle current_pokemon;
 	std::vector<Pokemon*> owned_pokemons = {};
 	int level = 1;
