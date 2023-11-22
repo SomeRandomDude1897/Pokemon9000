@@ -8,6 +8,10 @@ public:
 	int Begin();
 private:
 	PokemonBattle* player_pokemon;
+	/* Почему один по указателю, другой по ссылке? Просто опять-таки,
+	 * вы пишите ядро, оно предполагает расширение. Если бы вдруг пришлось
+	 * вводить мультиплеер, то это пришлось бы менять, да и вообще много кода.
+	 */
 	PokemonBattle enemy_pokemon;
 	bool flee_battle = false;
 	int StartPhase();

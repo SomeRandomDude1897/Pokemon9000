@@ -1,3 +1,5 @@
+/* В файл должно включаться только то, что в нем 
+ * непосредственно используется */
 #include <iostream>
 #include "Scene.h"
 #include "SceneAction.h"

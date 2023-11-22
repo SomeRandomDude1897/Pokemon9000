@@ -10,7 +10,8 @@ void Battle::Initialise(PokemonBattle* player_pokemon_in, PokemonBattle enemy_po
 	player_pokemon = player_pokemon_in;
 	enemy_pokemon = enemy_pokemon_in;
 }
-
+/* Как и зачем оно? Оно ведь не заставляет заново что-то ввести, 
+ * просто пропускает забаганную ситуацию. */
 int CheckErrorPlayerInput(std::string error_message)
 {
 	system("cls");
@@ -27,7 +28,8 @@ int CheckErrorPlayerInput(std::string error_message)
 		return CheckErrorPlayerInput(error_message);
 	}
 }
-
+/* Тут тоже было бы логично иметь не просто число, а enum class, 
+ * чтобы читающим код сразу было ясно, какой исход вышел */
 int Battle::CheckBattleStatus()
 {
 	if (player_pokemon->GetHp() == 0 || flee_battle)
@@ -45,6 +47,9 @@ std::string GetPlayerActions(PokemonBattle* player_pokemon)
 {
 	int c = 0;
 	std::string result = "";
+	/* Сами способности тебе тут не нужны, ты используешь тут только их 
+	 * имена, тогда покемону скорее нужны методы: возвращающий имена всех
+	 * способностей и применяющий способность к другому покемону по имени*/
 	std::vector<Ability> abilities_loaded = player_pokemon->GetAbilities();
 	for (int i = 0; i < abilities_loaded.size(); i++)
 	{
@@ -61,6 +66,8 @@ int GetPlayerInput()
 	int awaited_action = 0;
 	std::cin >> player_input;
 	bool has_non_numeric = false;
+	/* Будь это enum class проверка была бы не нужна, потому что и так бы нашлась
+	 * ошибка */
 	std::vector<char> allowed_symbols = { '0', '1', '2','3', '4', '5', '6', '7', '8', '9' };
 	for (int i = 0; i < player_input.size(); i++)
 	{
@@ -80,13 +87,18 @@ int GetPlayerInput()
 	}
 	return -1;
 }
-
+/* Мне кажется несколько неестественным, что способность применяет не покемон, 
+ * а бой. Мне это кажется противоречащим логике (и DDD, но вы пока не знаете, что это)*/
 void Battle::Strike(Ability action, PokemonBattle* attacker, PokemonBattle* defender)
 {
 	system("cls");
 	float damage_modifier = 1;
+	/* Auto стоит использовать, если тип черезчур длинный и непонятный или
+	 * совершенно очевиден. Я не думаю, что тут что-то из этого */
 	auto resistances = defender->GetResistances();
 	auto weaknesses = defender->GetWeaknesses();
+	/* Выглядит несколько странно. Мне кажется, должен быть map (словарик по-питонски), который 
+	 * сопоставляет противоположные типы */
 	if (std::find(resistances.begin(), resistances.end(), action.GetType()) != std::end(resistances))
 	{
 		damage_modifier /= 2;
@@ -99,6 +111,9 @@ void Battle::Strike(Ability action, PokemonBattle* attacker, PokemonBattle* defe
 	auto temp = action.GetDamage();
 	int min_damage = temp.first[attacker->GetLevel()];
 	int max_damage = temp.second[attacker->GetLevel()];
+	/* У тебя используется рандомная способность, а потом к ней печатается рандомное описание, 
+	 * которое никак не относится к способности? Почему у тебя там при выборе индекса описания
+	 * функция rand? */
 	int damage = (int) ((min_damage + rand() % (max_damage - min_damage)) * damage_modifier);
 	defender->TakeDamage(damage);
 	std::cout << attacker->GetName() << action.GetDescriptions()[rand() % (action.GetDescriptions().size())] << defender->GetName() << " dealing " << std::to_string(damage) << " damage!\n";
@@ -113,7 +128,7 @@ void Battle::MakePlayerTurn()
 	if (player_input <= abilities_loaded.size())
 	{
 		Strike(abilities_loaded[player_input-1], player_pokemon, &enemy_pokemon);
-		std::cin.get(); // ���� � ������� cin.get() ���� ���, �� ��� �� ��������, ������ ���
+		std::cin.get(); // ���� � ������� cin.get() ���� ���, �� ��� �� ��������, ������ ���
 		std::cin.get();
 	}
 	else if (player_input == abilities_loaded.size()+1)
@@ -122,6 +137,8 @@ void Battle::MakePlayerTurn()
 	}
 	else
 	{
+		/* Рекурсия вещь довольно неэффективная (в основном по памяти), обычно в любом коде
+		 * её стараются избегать по максимуму. А тут легко на цикл переписать */
 		MakePlayerTurn();
 	}
 }
@@ -167,6 +184,7 @@ int Battle::StartPhase()
 	
 	bool start_battle_flag = true;
 	std::string error_message;
+	/* А если он ошибся в имени?.. */
 	if (player_pokemon->GetName() == "")
 	{
 		error_message = "You forgot to choose a pokemon!\n";
