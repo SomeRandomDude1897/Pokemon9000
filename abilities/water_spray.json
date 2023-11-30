@@ -5,7 +5,7 @@
     " shows the power of the water to ",
     " spits at "
   ],
-  "type": "water",
+  "type": "WATER",
   "min_damage": [
     1,
     4,

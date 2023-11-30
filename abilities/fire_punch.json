@@ -5,7 +5,7 @@
     " delivers a fire punch to ",
     " fire punches "
   ],
-  "type": "fire",
+  "type": "FIRE",
   "min_damage": [
     7,
     10,

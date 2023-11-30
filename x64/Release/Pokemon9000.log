@@ -1,0 +1,47 @@
+﻿  Ability.cpp
+  AbilityType.cpp
+  AirPokemon.cpp
+  Battle.cpp
+  BattleSceneAction.cpp
+  CloseGameAction.cpp
+  EarthPokemon.cpp
+  FirePokemon.cpp
+  Game.cpp
+  GetPokemonAction.cpp
+  GoToSceneAction.cpp
+  HealAction.cpp
+  Player.cpp
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Player.cpp(39,30): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+  Pokemon.cpp
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(95,41): warning C4244: return: преобразование "const _Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(100,41): warning C4244: return: преобразование "const _Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(172,47): warning C4244: =: преобразование "_Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(173,47): warning C4244: =: преобразование "_Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+  Pokemon9000.cpp
+  Scene.cpp
+  SceneAction.cpp
+  ShowInventoryAction.cpp
+  WaterPokemon.cpp
+Pokemon.obj : error LNK2005: "enum AbilityType __cdecl AssignAbilityType(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?AssignAbilityType@@YA?AW4AbilityType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) уже определен в Ability.obj
+Battle.obj : error LNK2001: неразрешенный внешний символ "private: virtual struct std::pair<class std::vector<int,class std::allocator<int> >,class std::vector<int,class std::allocator<int> > > __cdecl AbilityInterface::GetDamage(void)" (?GetDamage@AbilityInterface@@EEAA?AU?$pair@V?$vector@HV?$allocator@H@std@@@std@@V12@@std@@XZ).
+Battle.obj : error LNK2001: неразрешенный внешний символ "private: virtual class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > __cdecl AbilityInterface::GetDescriptions(void)" (?GetDescriptions@AbilityInterface@@EEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ).
+Battle.obj : error LNK2001: неразрешенный внешний символ "private: virtual enum AbilityType __cdecl AbilityInterface::GetType(void)" (?GetType@AbilityInterface@@EEAA?AW4AbilityType@@XZ).
+Battle.obj : error LNK2001: неразрешенный внешний символ "private: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl AbilityInterface::GetName(void)" (?GetName@AbilityInterface@@EEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ).
+Battle.obj : error LNK2001: неразрешенный внешний символ "private: virtual void __cdecl AbilityInterface::Initialise(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (?Initialise@AbilityInterface@@EEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z).
+C:\Users\romik\source\repos\Pokemon9000\x64\Release\Pokemon9000.exe : fatal error LNK1120: неразрешенных внешних элементов: 5

@@ -5,7 +5,7 @@
     " delivers a punch to ",
     " punches "
   ],
-  "type": "earth",
+  "type": "EARTH",
   "min_damage": [
     3,
     5,

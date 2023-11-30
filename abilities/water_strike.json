@@ -5,7 +5,7 @@
     " waterbombards ",
     " gives water hell to "
   ],
-  "type": "water",
+  "type": "WATER",
   "min_damage": [
     15,
     20,

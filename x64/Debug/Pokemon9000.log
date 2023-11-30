@@ -1,0 +1,41 @@
+﻿  Ability.cpp
+  AirPokemon.cpp
+  Battle.cpp
+  BattleSceneAction.cpp
+  CloseGameAction.cpp
+  EarthPokemon.cpp
+  FirePokemon.cpp
+  Game.cpp
+  GetPokemonAction.cpp
+  GoToSceneAction.cpp
+  HealAction.cpp
+  Player.cpp
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Player.cpp(39,30): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+  Pokemon.cpp
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(71,41): warning C4244: return: преобразование "const _Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(76,41): warning C4244: return: преобразование "const _Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(148,47): warning C4244: =: преобразование "_Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\romik\source\repos\Pokemon9000\Pokemon9000\Pokemon.cpp(149,47): warning C4244: =: преобразование "_Ty" в "int", возможна потеря данных
+          with
+          [
+              _Ty=float
+          ]
+  Pokemon9000.cpp
+  Scene.cpp
+  SceneAction.cpp
+  ShowInventoryAction.cpp
+  WaterPokemon.cpp
+  Создание кода...
+  Pokemon9000.vcxproj -> C:\Users\romik\source\repos\Pokemon9000\x64\Debug\Pokemon9000.exe
