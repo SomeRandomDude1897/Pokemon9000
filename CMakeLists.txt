@@ -7,4 +7,4 @@ file(GLOB SOURCES
     headers/*.hpp
     scripts/*.cpp)
 
-add_executable(DemoOfSomething ${SOURCES})
+add_executable(Pokemon9000 ${SOURCES})
