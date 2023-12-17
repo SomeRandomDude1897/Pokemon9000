@@ -43,6 +43,7 @@ public:
 	void TakeDamage(int damage);
 	std::vector<Ability> GetAbilities() const;
 	std::string GetName();
+	std::string Attack(Pokemon* defender, int action_number);
 	friend class Battle;
 	friend class Player;
 

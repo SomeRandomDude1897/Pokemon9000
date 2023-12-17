@@ -51,6 +51,29 @@ std::vector<Ability> Pokemon::GetAbilities() const
 	return abilities;
 }
 
+std::string Pokemon::Attack(Pokemon* defender, int action_number)
+{
+	Ability action = params.abilities[action_number];
+	float damage_modifier = 1;
+	std::vector<std::string> resistances = defender->GetResistances();
+	std::vector<std::string> weaknesses = defender->GetWeaknesses();
+	if (std::find(resistances.begin(), resistances.end(), action.GetType()) != std::end(resistances))
+	{
+		damage_modifier /= 2;
+	}
+	if (std::find(weaknesses.begin(), weaknesses.end(), action.GetType()) != std::end(weaknesses))
+	{
+		damage_modifier *= 2;
+	}
+
+	auto temp = action.GetDamage();
+	int min_damage = temp.first[current_level];
+	int max_damage = temp.second[current_level];
+	int damage = (int)((min_damage + rand() % (max_damage - min_damage)) * damage_modifier);
+	defender->current_hp -= damage;
+	return params.pokemon_name + " " + action.GetDescriptions()[rand() % (action.GetDescriptions().size())] + " " + defender->GetName() + " dealing " + std::to_string(damage) + " damage!\n";
+}
+
 std::string Pokemon::GetType() const
 {
 	return params.pokemon_type;

@@ -25,6 +25,6 @@ private:
 	BattleState EndPhase(int result);
 	void MakePlayerTurn();
 	void MakeEnemyTurn();
-	void Strike(Ability action, Pokemon* attacker, Pokemon* defender);
+	void Strike(int action, Pokemon* attacker, Pokemon* defender);
 };
 

@@ -81,28 +81,12 @@ int GetPlayerInput()
 	return -1;
 }
 
-void Battle::Strike(Ability action, Pokemon* attacker, Pokemon* defender)
+void Battle::Strike(int action_number, Pokemon* attacker, Pokemon* defender)
 {
 	system("cls");
-	float damage_modifier = 1;
-	auto resistances = defender->GetResistances();
-	auto weaknesses = defender->GetWeaknesses();
-	if (std::find(resistances.begin(), resistances.end(), action.GetType()) != std::end(resistances))
-	{
-		damage_modifier /= 2;
-	}
-	if (std::find(weaknesses.begin(), weaknesses.end(), action.GetType()) != std::end(weaknesses))
-	{
-		damage_modifier *= 2;
-	}
-	
-	auto temp = action.GetDamage();
-	int min_damage = temp.first[attacker->GetLevel()];
-	int max_damage = temp.second[attacker->GetLevel()];
-	int damage = (int) ((min_damage + rand() % (max_damage - min_damage)) * damage_modifier);
-	defender->TakeDamage(damage);
-	std::cout << attacker->GetName() << action.GetDescriptions()[rand() % (action.GetDescriptions().size())] << defender->GetName() << " dealing " << std::to_string(damage) << " damage!\n";
-	std::cout << "enter any key to continue";
+	std::string strike_comment = attacker->Attack(defender, action_number);
+	std::cout << strike_comment;
+	std::cout << "enter any key to continue\n";
 }
 
 void Battle::MakePlayerTurn()
@@ -114,7 +98,7 @@ void Battle::MakePlayerTurn()
 		int player_input = GetPlayerInput();
 		if (player_input <= abilities_loaded.size())
 		{
-			Strike(abilities_loaded[player_input - 1], player_pokemon, &enemy_pokemon);
+			Strike(player_input - 1, player_pokemon, &enemy_pokemon);
 			std::cin.get(); // если я вызываю cin.get() один раз, то оно не работает, почему так
 			std::cin.get();
 			break;
@@ -130,7 +114,7 @@ void Battle::MakePlayerTurn()
 void Battle::MakeEnemyTurn()
 {
 	std::vector<Ability> abilities_loaded = enemy_pokemon.GetAbilities();
-	Strike(abilities_loaded[rand() % abilities_loaded.size()], &enemy_pokemon, player_pokemon);
+	Strike(rand() % abilities_loaded.size(), &enemy_pokemon, player_pokemon);
 	std::cin.get();
 }
 
